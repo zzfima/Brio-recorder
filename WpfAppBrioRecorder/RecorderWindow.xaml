@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="Brio Recorder"
+        Icon="video_record_B_icon.ico"
         Height="720"
         Width="1180"
         MinHeight="640"
@@ -238,3 +239,5 @@
         </Border>
     </Grid>
 </Window>
+
+
