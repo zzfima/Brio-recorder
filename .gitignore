@@ -1,0 +1,59 @@
+# Build results
+bin/
+obj/
+Debug/
+Release/
+x64/
+x86/
+[Bb]uild/
+[Rr]eleases/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.vcxproj.user
+
+# Rider / ReSharper
+.idea/
+_ReSharper*/
+*.DotSettings.user
+
+# NuGet
+packages/
+*.nupkg
+*.snupkg
+
+# Test results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# Logs
+*.log
+
+# Generated files
+*.cache
+*.pdb
+*.ilk
+*.tmp
+*.temp
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Publish output
+publish/
+app.publish/
+
+# Backup files
+*.bak
+*.backup
+*.orig
+
+# JetBrains / VS Code
+.vscode/

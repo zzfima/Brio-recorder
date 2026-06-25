@@ -1,0 +1,40 @@
+Brio Recorder Help
+==================
+
+Creator: Efim Zabarsky
+
+Overview
+--------
+Brio Recorder is a Windows 10/11 WPF application for recording video from a webcam such as the Logitech Brio 100.
+
+How to use
+----------
+1. Connect your camera.
+2. Start the application.
+3. Choose the camera from the Camera list.
+4. Wait for the live preview to appear.
+5. Click Start Recording to begin capturing video.
+6. Click Stop Recording to finish and save the file.
+7. Select a recording from the Recorded Files list.
+8. Click Play Selected to open the file in the default Windows media player.
+9. Click Open Folder to open the recordings folder.
+
+Saved files
+-----------
+Recordings are saved in your Videos\BrioRecorder folder.
+
+Notes
+-----
+- The application prefers Logitech Brio 100 automatically when detected.
+- Recordings are currently saved as AVI files.
+- If no camera is shown, reconnect the webcam and click Refresh.
+- If playback does not start, make sure Windows has a default app associated with AVI files.
+
+Troubleshooting
+---------------
+- No preview:
+  Make sure the webcam is not in use by another application.
+- Recording does not start:
+  Start the preview first and verify the camera is selected.
+- Camera not found:
+  Unplug and reconnect the webcam, then click Refresh.

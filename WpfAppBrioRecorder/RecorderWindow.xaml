@@ -1,0 +1,240 @@
+<Window x:Class="WpfAppBrioRecorder.RecorderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Brio Recorder"
+        Height="720"
+        Width="1180"
+        MinHeight="640"
+        MinWidth="980">
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="12" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Margin="0,0,0,12"
+                Padding="12"
+                Background="#FFF8FAFC"
+                BorderBrush="#FFD0D7DE"
+                BorderThickness="1"
+                CornerRadius="8">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="220" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="170" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Margin="0,0,12,0"
+                           VerticalAlignment="Center"
+                           FontSize="14"
+                           FontWeight="SemiBold"
+                           Text="Camera" />
+                <ComboBox x:Name="CameraComboBox"
+                          Grid.Column="1"
+                          Height="32"
+                          VerticalAlignment="Center"
+                          DisplayMemberPath="Name"
+                          SelectionChanged="CameraComboBox_SelectionChanged" />
+                <TextBlock Grid.Column="2"
+                           Margin="12,0,12,0"
+                           VerticalAlignment="Center"
+                           FontSize="14"
+                           FontWeight="SemiBold"
+                           Text="Quality" />
+                <ComboBox x:Name="QualityComboBox"
+                          Grid.Column="3"
+                          Height="32"
+                          VerticalAlignment="Center"
+                          DisplayMemberPath="DisplayName"
+                          SelectionChanged="QualityComboBox_SelectionChanged" />
+                <Button x:Name="RefreshCamerasButton"
+                        Grid.Column="4"
+                        Width="90"
+                        Height="32"
+                        Margin="12,0,0,0"
+                        Click="RefreshCamerasButton_Click"
+                        Content="Refresh" />
+                <StackPanel Grid.Row="1"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="6"
+                            Margin="0,12,0,0"
+                            Orientation="Horizontal">
+                    <Button x:Name="StartRecordingButton"
+                            Width="140"
+                            Height="32"
+                            Click="StartRecordingButton_Click"
+                            Content="Start Recording" />
+                    <Button x:Name="StopRecordingButton"
+                            Width="140"
+                            Height="32"
+                            Margin="12,0,0,0"
+                            Click="StopRecordingButton_Click"
+                            Content="Stop Recording" />
+                    <Button x:Name="OpenFolderButton"
+                            Width="110"
+                            Height="32"
+                            Margin="12,0,0,0"
+                            Click="OpenFolderButton_Click"
+                            Content="Open Folder" />
+                    <Button x:Name="HelpButton"
+                            Width="80"
+                            Height="32"
+                            Margin="12,0,0,0"
+                            Click="HelpButton_Click"
+                            Content="Help" />
+                    <TextBlock x:Name="StatusTextBlock"
+                               Margin="16,0,0,0"
+                               VerticalAlignment="Center"
+                               FontSize="13"
+                               TextTrimming="CharacterEllipsis" />
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0"
+                    Padding="8"
+                    Background="#FF0F172A"
+                    BorderBrush="#FFD0D7DE"
+                    BorderThickness="1"
+                    CornerRadius="8">
+                <Grid>
+                    <Image x:Name="PreviewImage" Stretch="Uniform" />
+                    <TextBlock x:Name="PreviewPlaceholderTextBlock"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="20"
+                               Foreground="#FFE2E8F0"
+                               Text="Camera preview will appear here" />
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="1"
+                    Margin="0,12,0,0"
+                    Padding="12"
+                    Background="#FFF8FAFC"
+                    BorderBrush="#FFD0D7DE"
+                    BorderThickness="1"
+                    CornerRadius="8">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock FontSize="13"
+                               FontWeight="SemiBold"
+                               Text="Recording folder" />
+                    <TextBlock x:Name="RecordingFolderTextBlock"
+                               Grid.Row="1"
+                               Margin="0,6,0,0"
+                               TextWrapping="Wrap" />
+                    <TextBlock Grid.Row="2"
+                               Margin="0,10,0,0"
+                               FontSize="13"
+                               FontWeight="SemiBold"
+                               Text="Creator: Efim Zabarsky" />
+                    <TextBlock Grid.Row="3"
+                               Margin="0,10,0,0"
+                               FontSize="13"
+                               FontWeight="SemiBold"
+                               Text="Selected quality" />
+                    <TextBlock x:Name="RecordingQualityTextBlock"
+                               Grid.Row="4"
+                               Margin="0,6,0,0"
+                               TextWrapping="Wrap" />
+                    <TextBlock Grid.Row="5"
+                               Margin="0,10,0,0"
+                               FontSize="13"
+                               FontWeight="SemiBold"
+                               Text="Estimated size" />
+                    <TextBlock x:Name="EstimatedSizeTextBlock"
+                               Grid.Row="6"
+                               Margin="0,6,0,0"
+                               TextWrapping="Wrap" />
+                    <TextBlock Grid.Row="7"
+                               Margin="0,10,0,0"
+                               FontSize="13"
+                               FontWeight="SemiBold"
+                               Text="Recording time" />
+                    <TextBlock x:Name="RecordingTimeTextBlock"
+                               Grid.Row="8"
+                               Margin="0,6,0,0"
+                               TextWrapping="Wrap" />
+                </Grid>
+            </Border>
+        </Grid>
+
+        <Border Grid.Row="1"
+                Grid.Column="2"
+                Padding="12"
+                Background="#FFF8FAFC"
+                BorderBrush="#FFD0D7DE"
+                BorderThickness="1"
+                CornerRadius="8">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <TextBlock FontSize="18"
+                           FontWeight="SemiBold"
+                           Text="Recorded Files" />
+                <ListBox x:Name="RecordingsListBox"
+                         Grid.Row="1"
+                         Margin="0,12,0,12"
+                         DisplayMemberPath="DisplayName"
+                         MouseDoubleClick="RecordingsListBox_MouseDoubleClick"
+                         SelectionChanged="RecordingsListBox_SelectionChanged" />
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="SelectedFileTextBlock"
+                               Margin="0,0,12,0"
+                               VerticalAlignment="Center"
+                               TextTrimming="CharacterEllipsis" />
+                    <Button x:Name="PlaySelectedButton"
+                            Grid.Column="1"
+                            Width="120"
+                            Height="32"
+                            Click="PlaySelectedButton_Click"
+                            Content="Play Selected" />
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
