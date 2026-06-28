@@ -12,21 +12,43 @@ How to use
 1. Connect your camera.
 2. Start the application.
 3. Choose the camera from the Camera list.
-4. Wait for the live preview to appear.
-5. Click Start Recording to begin capturing video.
-6. Click Stop Recording to finish and save the file.
-7. Select a recording from the Recorded Files list.
-8. Click Play Selected to open the file in the default Windows media player.
-9. Click Open Folder to open the recordings folder.
+4. Choose the recording quality.
+5. Select the recording mode:
+   - Regular records until you stop it.
+   - Loop keeps only the last selected number of hours.
+6. If Loop mode is selected, choose a retention period from 1 to 12 hours.
+7. Wait for the live preview to appear.
+8. Click Start Recording to begin capturing video.
+9. Click Stop Recording to finish and save the file.
+10. Select a recording from the Recorded Files list.
+11. Click Play Selected to open the file in the default Windows media player.
+12. Click Open Folder to open the selected recording folder, or the current destination folder if nothing is selected.
+13. Click Change Folder to choose a different destination for future recordings.
+14. Use the checkboxes in the Recorded Files list to select multiple recordings for deletion.
 
 Saved files
 -----------
-Recordings are saved in your Videos\BrioRecorder folder.
+By default, recordings are saved in your Videos\BrioRecorder folder.
+You can change the destination folder from inside the application.
+
+Recording modes
+---------------
+- Regular recording saves one recording until you stop it manually.
+- Loop recording saves video in short segments and automatically deletes segments older than the selected retention period.
+- The Estimated size field shows the approximate size per minute in Regular mode, and the approximate retained size for the selected number of hours in Loop mode.
+
+Recorded files list
+-------------------
+- Each item shows the file name, date, and full file path.
+- Select All checks or clears all items in the list.
+- Delete Selected removes the currently selected recording.
+- Delete Checked removes all checked recordings.
 
 Notes
 -----
 - The application prefers Logitech Brio 100 automatically when detected.
 - Recordings are currently saved as AVI files.
+- Loop recording rotates files automatically and keeps only the newest files within the selected time window.
 - If no camera is shown, reconnect the webcam and click Refresh.
 - If playback does not start, make sure Windows has a default app associated with AVI files.
 
@@ -36,5 +58,7 @@ Troubleshooting
   Make sure the webcam is not in use by another application.
 - Recording does not start:
   Start the preview first and verify the camera is selected.
+- Loop recording does not delete old files:
+  Make sure Loop mode is selected and the destination folder is writable.
 - Camera not found:
   Unplug and reconnect the webcam, then click Refresh.
