@@ -168,6 +168,11 @@
   <ItemGroup>
     <Resource Include="video_record_B_icon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Help.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
 
