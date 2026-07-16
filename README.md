@@ -48,7 +48,7 @@ Open the project in Visual Studio and build the solution.
 You can also build with MSBuild:
 
 ```powershell
-& 'C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Current\Bin\MSBuild.exe' WpfAppBrioRecorder.csproj /restore /p:Configuration=Debug
+& 'C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Current\Bin\MSBuild.exe' BrioRecorder.csproj /restore /p:Configuration=Debug
 ```
 
 ## Run
@@ -56,7 +56,7 @@ You can also build with MSBuild:
 Start the application from Visual Studio or run:
 
 ```text
-bin\Debug\WpfAppBrioRecorder.exe
+bin\Debug\BrioRecorder.exe
 ```
 
 ## How to use

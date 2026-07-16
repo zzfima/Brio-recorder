@@ -1,18 +1,16 @@
 ﻿using System.Reflection;
-using System.Resources;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("WpfAppBrioRecorder")]
+[assembly: AssemblyTitle("BrioRecorder")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("KLA Corp.")]
-[assembly: AssemblyProduct("WpfAppBrioRecorder")]
-[assembly: AssemblyCopyright("Copyright © KLA Corp. 2026")]
+[assembly: AssemblyCompany("Efim Zabarsky.")]
+[assembly: AssemblyProduct("BrioRecorder")]
+[assembly: AssemblyCopyright("Copyright © Efim Zabarsky. 2026")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

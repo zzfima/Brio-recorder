@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B6BFA79C-9F10-4450-B29D-CB3AC0F13A1F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WpfAppBrioRecorder</RootNamespace>
-    <AssemblyName>WpfAppBrioRecorder</AssemblyName>
+    <RootNamespace>BrioRecorder</RootNamespace>
+    <AssemblyName>BrioRecorder</AssemblyName>
     <ApplicationIcon>video_record_B_icon.ico</ApplicationIcon>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

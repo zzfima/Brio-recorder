@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WpfAppBrioRecorder.Properties
+namespace BrioRecorder.Properties
 {
 
 

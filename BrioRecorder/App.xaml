@@ -1,7 +1,7 @@
-﻿<Application x:Class="WpfAppBrioRecorder.App"
+﻿<Application x:Class="BrioRecorder.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:WpfAppBrioRecorder"
+             xmlns:local="clr-namespace:BrioRecorder"
              StartupUri="RecorderWindow.xaml">
     <Application.Resources>
          
