@@ -225,6 +225,31 @@ namespace WpfAppBrioRecorder
             }
         }
 
+        private void ToggleDetailsPanelButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (DetailsPanelContent == null || ToggleDetailsPanelButton == null)
+            {
+                return;
+            }
+
+            var isCollapsing = DetailsPanelContent.Visibility == Visibility.Visible;
+            DetailsPanelContent.Visibility = isCollapsing ? Visibility.Collapsed : Visibility.Visible;
+            ToggleDetailsPanelButton.Content = isCollapsing ? "\u25BC" : "\u25B2";
+        }
+
+        private void ToggleRecordedFilesPanelButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (RecordedFilesContent == null || ToggleRecordedFilesPanelButton == null || RecordedFilesColumnDefinition == null)
+            {
+                return;
+            }
+
+            var isCollapsing = RecordedFilesContent.Visibility == Visibility.Visible;
+            RecordedFilesContent.Visibility = isCollapsing ? Visibility.Collapsed : Visibility.Visible;
+            RecordedFilesColumnDefinition.Width = isCollapsing ? GridLength.Auto : new GridLength(1, GridUnitType.Star);
+            ToggleRecordedFilesPanelButton.Content = isCollapsing ? "\u25B6" : "\u25C0";
+        }
+
         private static string ResolveInitialRecordingsFolder()
         {
             var savedRecordingFolder = Properties.Settings.Default.RecordingFolder;

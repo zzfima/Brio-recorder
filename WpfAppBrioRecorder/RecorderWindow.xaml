@@ -17,8 +17,8 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*" />
-            <ColumnDefinition Width="12" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition x:Name="RightPanelSpacerColumn" Width="12" />
+            <ColumnDefinition x:Name="RecordedFilesColumnDefinition" Width="*" />
         </Grid.ColumnDefinitions>
 
         <Border Grid.Row="0"
@@ -189,70 +189,96 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    <TextBlock FontSize="13"
-                               FontWeight="SemiBold"
-                               Text="Recording folder" />
-                    <TextBlock x:Name="RecordingFolderTextBlock"
-                               Grid.Row="1"
-                               Margin="0,6,0,0"
-                               TextWrapping="Wrap" />
-                    <TextBlock Grid.Row="3"
-                               Margin="0,10,0,0"
-                               FontSize="13"
-                               FontWeight="SemiBold"
-                               Text="Selected quality" />
-                    <TextBlock x:Name="RecordingQualityTextBlock"
-                               Grid.Row="4"
-                               Margin="0,6,0,0"
-                               TextWrapping="Wrap" />
-                    <TextBlock Grid.Row="5"
-                               Margin="0,10,0,0"
-                               FontSize="13"
-                               FontWeight="SemiBold"
-                               Text="Recording mode" />
-                    <TextBlock x:Name="RecordingModeTextBlock"
-                               Grid.Row="6"
-                               Margin="0,6,0,0"
-                               TextWrapping="Wrap" />
-                    <TextBlock Grid.Row="7"
-                               Margin="0,10,0,0"
-                               FontSize="13"
-                               FontWeight="SemiBold"
-                               Text="Loop retention" />
-                    <TextBlock x:Name="LoopRetentionTextBlock"
-                               Grid.Row="8"
-                               Margin="0,6,0,0"
-                               TextWrapping="Wrap" />
-                    <TextBlock Grid.Row="9"
-                               Margin="0,10,0,0"
-                               FontSize="13"
-                               FontWeight="SemiBold"
-                               Text="Estimated size" />
-                    <TextBlock x:Name="EstimatedSizeTextBlock"
-                               Grid.Row="10"
-                               Margin="0,6,0,0"
-                               TextWrapping="Wrap" />
-                    <TextBlock Grid.Row="11"
-                               Margin="0,10,0,0"
-                               FontSize="13"
-                               FontWeight="SemiBold"
-                               Text="Recording time" />
-                    <TextBlock x:Name="RecordingTimeTextBlock"
-                               Grid.Row="12"
-                               Margin="0,6,0,0"
-                               TextWrapping="Wrap" />
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock FontSize="14"
+                                   FontWeight="SemiBold"
+                                   Text="Details" />
+                        <Button x:Name="ToggleDetailsPanelButton"
+                                Grid.Column="1"
+                                Width="28"
+                                Height="24"
+                                Padding="0"
+                                Click="ToggleDetailsPanelButton_Click"
+                                Content="&#9650;" />
+                    </Grid>
+
+                    <Grid x:Name="DetailsPanelContent"
+                          Grid.Row="1"
+                          Margin="0,10,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <TextBlock FontSize="13"
+                                   FontWeight="SemiBold"
+                                   Text="Recording folder" />
+                        <TextBlock x:Name="RecordingFolderTextBlock"
+                                   Grid.Row="1"
+                                   Margin="0,6,0,0"
+                                   TextWrapping="Wrap" />
+                        <TextBlock Grid.Row="3"
+                                   Margin="0,10,0,0"
+                                   FontSize="13"
+                                   FontWeight="SemiBold"
+                                   Text="Selected quality" />
+                        <TextBlock x:Name="RecordingQualityTextBlock"
+                                   Grid.Row="4"
+                                   Margin="0,6,0,0"
+                                   TextWrapping="Wrap" />
+                        <TextBlock Grid.Row="5"
+                                   Margin="0,10,0,0"
+                                   FontSize="13"
+                                   FontWeight="SemiBold"
+                                   Text="Recording mode" />
+                        <TextBlock x:Name="RecordingModeTextBlock"
+                                   Grid.Row="6"
+                                   Margin="0,6,0,0"
+                                   TextWrapping="Wrap" />
+                        <TextBlock Grid.Row="7"
+                                   Margin="0,10,0,0"
+                                   FontSize="13"
+                                   FontWeight="SemiBold"
+                                   Text="Loop retention" />
+                        <TextBlock x:Name="LoopRetentionTextBlock"
+                                   Grid.Row="8"
+                                   Margin="0,6,0,0"
+                                   TextWrapping="Wrap" />
+                        <TextBlock Grid.Row="9"
+                                   Margin="0,10,0,0"
+                                   FontSize="13"
+                                   FontWeight="SemiBold"
+                                   Text="Estimated size" />
+                        <TextBlock x:Name="EstimatedSizeTextBlock"
+                                   Grid.Row="10"
+                                   Margin="0,6,0,0"
+                                   TextWrapping="Wrap" />
+                        <TextBlock Grid.Row="11"
+                                   Margin="0,10,0,0"
+                                   FontSize="13"
+                                   FontWeight="SemiBold"
+                                   Text="Recording time" />
+                        <TextBlock x:Name="RecordingTimeTextBlock"
+                                   Grid.Row="12"
+                                   Margin="0,6,0,0"
+                                   TextWrapping="Wrap" />
+                    </Grid>
                 </Grid>
             </Border>
         </Grid>
@@ -267,89 +293,108 @@
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
 
-                <TextBlock FontSize="18"
-                           FontWeight="SemiBold"
-                           Text="Recorded Files" />
-
-                <CheckBox x:Name="SelectAllRecordingsCheckBox"
-                          Grid.Row="1"
-                          Margin="0,10,0,0"
-                          VerticalAlignment="Center"
-                          Content="Select All"
-                          Checked="SelectAllRecordingsCheckBox_Changed"
-                          Unchecked="SelectAllRecordingsCheckBox_Changed" />
-
-                <Grid Grid.Row="2"
-                      Margin="0,10,0,0">
+                <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="PlaySelectedButton"
-                            Height="32"
-                            Margin="0,0,6,0"
-                            Click="PlaySelectedButton_Click"
-                            Content="Play Selected" />
-                    <Button x:Name="DeleteSelectedButton"
+                    <TextBlock FontSize="18"
+                               FontWeight="SemiBold"
+                               Text="Recorded Files" />
+                    <Button x:Name="ToggleRecordedFilesPanelButton"
                             Grid.Column="1"
-                            Height="32"
-                            Margin="6,0,6,0"
-                            Click="DeleteSelectedButton_Click"
-                            Content="Delete Selected" />
-                    <Button x:Name="DeleteCheckedButton"
-                            Grid.Column="2"
-                            Height="32"
-                            Margin="6,0,0,0"
-                            Click="DeleteCheckedButton_Click"
-                            Content="Delete Checked" />
+                            Width="28"
+                            Height="24"
+                            Padding="0"
+                            Click="ToggleRecordedFilesPanelButton_Click"
+                            Content="&#9668;" />
                 </Grid>
 
-                <TextBlock x:Name="SelectedFileTextBlock"
-                           Grid.Row="3"
-                           Margin="0,6,0,0"
-                           VerticalAlignment="Center"
-                           FontSize="12"
-                           Foreground="#FF475569"
-                           TextTrimming="CharacterEllipsis" />
+                <Grid x:Name="RecordedFilesContent"
+                      Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
 
-                <ListBox x:Name="RecordingsListBox"
-                         Grid.Row="4"
-                         Margin="0,10,0,0"
-                         MouseDoubleClick="RecordingsListBox_MouseDoubleClick"
-                         SelectionChanged="RecordingsListBox_SelectionChanged">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <Grid Margin="0,4,0,4">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
-                                <CheckBox Grid.Column="0"
-                                          Margin="0,2,8,0"
-                                          VerticalAlignment="Top"
-                                          IsChecked="{Binding IsChecked, Mode=TwoWay}"
-                                          Checked="RecordedFileCheckBox_Changed"
-                                          Unchecked="RecordedFileCheckBox_Changed" />
-                                <StackPanel Grid.Column="1">
-                                    <TextBlock FontWeight="SemiBold"
-                                               Text="{Binding DisplayName}"
-                                               TextTrimming="CharacterEllipsis" />
-                                    <TextBlock FontSize="12"
-                                               Foreground="#FF475569"
-                                               Text="{Binding FilePath}"
-                                               TextWrapping="Wrap" />
-                                </StackPanel>
-                            </Grid>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
+                    <CheckBox x:Name="SelectAllRecordingsCheckBox"
+                              Margin="0,10,0,0"
+                              VerticalAlignment="Center"
+                              Content="Select All"
+                              Checked="SelectAllRecordingsCheckBox_Changed"
+                              Unchecked="SelectAllRecordingsCheckBox_Changed" />
+
+                    <Grid Grid.Row="1"
+                          Margin="0,10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="PlaySelectedButton"
+                                Height="32"
+                                Margin="0,0,6,0"
+                                Click="PlaySelectedButton_Click"
+                                Content="Play Selected" />
+                        <Button x:Name="DeleteSelectedButton"
+                                Grid.Column="1"
+                                Height="32"
+                                Margin="6,0,6,0"
+                                Click="DeleteSelectedButton_Click"
+                                Content="Delete Selected" />
+                        <Button x:Name="DeleteCheckedButton"
+                                Grid.Column="2"
+                                Height="32"
+                                Margin="6,0,0,0"
+                                Click="DeleteCheckedButton_Click"
+                                Content="Delete Checked" />
+                    </Grid>
+
+                    <TextBlock x:Name="SelectedFileTextBlock"
+                               Grid.Row="2"
+                               Margin="0,6,0,0"
+                               VerticalAlignment="Center"
+                               FontSize="12"
+                               Foreground="#FF475569"
+                               TextTrimming="CharacterEllipsis" />
+
+                    <ListBox x:Name="RecordingsListBox"
+                             Grid.Row="3"
+                             Margin="0,10,0,0"
+                             MouseDoubleClick="RecordingsListBox_MouseDoubleClick"
+                             SelectionChanged="RecordingsListBox_SelectionChanged">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="0,4,0,4">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox Grid.Column="0"
+                                              Margin="0,2,8,0"
+                                              VerticalAlignment="Top"
+                                              IsChecked="{Binding IsChecked, Mode=TwoWay}"
+                                              Checked="RecordedFileCheckBox_Changed"
+                                              Unchecked="RecordedFileCheckBox_Changed" />
+                                    <StackPanel Grid.Column="1">
+                                        <TextBlock FontWeight="SemiBold"
+                                                   Text="{Binding DisplayName}"
+                                                   TextTrimming="CharacterEllipsis" />
+                                        <TextBlock FontSize="12"
+                                                   Foreground="#FF475569"
+                                                   Text="{Binding FilePath}"
+                                                   TextWrapping="Wrap" />
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
             </Grid>
         </Border>
     </Grid>
